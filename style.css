@@ -16,7 +16,8 @@ section {
   padding: 100px 0;
 }
 .max-width {
-  max-width: 100%;
+  max-width: 1300px;
+  width: 100%;
   padding: 0 80px;
   margin: auto;
 }
@@ -71,14 +72,9 @@ section .title {
   transition: 15sec;
 }
 section .title:hover {
-  font-size: 35px;
-  transform: translateY(12px);
-}
-section .title:hover {
   font-size: 37px;
   transform: translateY(12px);
 }
-
 /* navbar styling */
 .navbar {
   position: fixed;
@@ -924,4 +920,57 @@ footer .menu {
   .interest-bg {
     justify-content: center;
   }
+}
+/*improving responsive*/
+@media (max-width: 768px) {
+  html {
+    font-size: 90%;
+  }
+
+  .max-width {
+    padding: 0 20px;
+  }
+
+  section {
+    padding: 60px 0;
+  }
+
+  .about .about-content,
+  .services .serv-content,
+  .teams .check-me,
+  .contact .contact-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .about .about-content .left,
+  .about .about-content .right,
+  .contact .contact-content .column {
+    width: 100%;
+  }
+
+  .services .serv-content .card,
+  .skills .skills-content .skills-bg {
+    width: 100% !important;
+  }
+
+  .home .home-content .text-2 {
+    font-size: 40px;
+  }
+
+  .home .home-content .text-3 {
+    font-size: 20px;
+  }
+
+  .home .home-content a {
+    font-size: 16px;
+    padding: 5px 10px;
+  }
+}
+/*image and container view*/
+img,
+video {
+  max-width: 100%;
+  height: auto;
 }
