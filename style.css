@@ -16,8 +16,7 @@ section {
   padding: 100px 0;
 }
 .max-width {
-  max-width: 1300px;
-  width: 100%;
+  max-width: 100%;
   padding: 0 80px;
   margin: auto;
 }
@@ -27,7 +26,8 @@ section {
 .contact,
 footer {
   font-family: "Poppins", sans-serif;
-}.about .about-content {
+}
+.about .about-content {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -72,9 +72,14 @@ section .title {
   transition: 15sec;
 }
 section .title:hover {
+  font-size: 35px;
+  transform: translateY(12px);
+}
+section .title:hover {
   font-size: 37px;
   transform: translateY(12px);
 }
+
 /* navbar styling */
 .navbar {
   position: fixed;
@@ -920,57 +925,125 @@ footer .menu {
   .interest-bg {
     justify-content: center;
   }
-}
-/*improving responsive*/
+} 
+/* mobile responsive */
 @media (max-width: 768px) {
-  html {
-    font-size: 90%;
+  /* Ensure full width */
+  html, body {
+    width: 100%;
+    overflow-x: hidden;
   }
 
   .max-width {
     padding: 0 20px;
   }
 
-  section {
-    padding: 60px 0;
+  .home {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    text-align: center;
   }
 
-  .about .about-content,
-  .services .serv-content,
-  .teams .check-me,
-  .contact .contact-content {
+  .home .home-content {
+    width: 100%;
+    padding: 20px;
+    align-items: center;
+  }
+
+  .home .home-content .text-1,
+  .home .home-content .text-2,
+  .home .home-content .text-3 {
+    margin-left: 0;
+    font-size: 22px;
+  }
+
+  .home .home-content .text-2 {
+    font-size: 42px;
+  }
+
+  .home .home-content .text-3 {
+    font-size: 25px;
+  }
+
+  .about .about-content {
     flex-direction: column;
-    text-align: center;
     gap: 20px;
   }
 
   .about .about-content .left,
-  .about .about-content .right,
-  .contact .contact-content .column {
+  .about .about-content .right {
     width: 100%;
+    text-align: center;
   }
 
   .services .serv-content .card,
-  .skills .skills-content .skills-bg {
+  .teams .carousel .card,
+  .contact .contact-content .column {
     width: 100% !important;
   }
 
-  .home .home-content .text-2 {
-    font-size: 40px;
+  .navbar .max-width {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 20px;
   }
 
-  .home .home-content .text-3 {
+  .navbar .menu {
+    width: 100%;
+    padding-top: 100px;
+  }
+
+  .footer,
+  .footer .menu,
+  .social_icon {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+/* Hamburger menu styles - Clean and Correct */
+.menu-btn {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: #fff;
+  z-index: 1001;
+}
+
+.menu-btn i.active {
+  transform: rotate(90deg);
+}
+
+@media (max-width: 768px) {
+  .menu-btn {
+    display: block;
+  }
+
+  .navbar .menu {
+    position: fixed;
+    top: 60px; /* Adjust if your navbar height is different */
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 60px);
+    background-color: #111;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    z-index: 999;
+  }
+
+  .navbar .menu.active {
+    display: flex;
+  }
+
+  .navbar .menu li {
+    margin: 15px 0;
+  }
+
+  .navbar .menu li a {
     font-size: 20px;
   }
+}
 
-  .home .home-content a {
-    font-size: 16px;
-    padding: 5px 10px;
-  }
-}
-/*image and container view*/
-img,
-video {
-  max-width: 100%;
-  height: auto;
-}
